@@ -18,6 +18,8 @@ import 'package:flutter_bazaar/flutter_bazaar.dart';
 
 Done!
 
+
+
 ## API
 - <a href="#in-app-purchase">In-App purchase</a>
     - <a href="#initialization">Initialization</a>
@@ -33,9 +35,13 @@ Done!
 - <a href="#update-checker">Update Checker</a>
 - <a href="#update-checker">Login Checker</a>
 
+
+
 ## In-App purchase
 
 قسمت پرداخت درون برنامه این کتابخانه با استفاده از کتابخانه جدید کافه بازار به اسم <a href="https://github.com/cafebazaar/Poolakey">پولکی</a>  توسعه داده شده است.
+
+
 
 ### Initialization
 
@@ -51,6 +57,8 @@ final iap = _bazaar.inAppPurchase(PUBLIC_KEY);
 **PUBLIC_KEY** is your public RSA key from cafebazaar control panel
 
 **PUBLIC_KEY** کلید عمومی اپلیکیشن شماست که از بخش پرداخت درون برنامه ای پنل توسعه دهندگان کافه بازار قابل دریافت است.
+
+
 
 ### Purchase a product
 
@@ -82,6 +90,8 @@ class PurchaseInfo {
 }
 ```
 
+
+
 ### Subscribe to product
 
 ```dart
@@ -95,6 +105,8 @@ if `purchaseInfo != null` subscription is successful
 
 در صورتی که `purchaseInfo != null` باشد اشتراک با موفقیت انجام گرفته است.
 
+
+
 ### Consume a purchase
 
 ```dart
@@ -104,6 +116,8 @@ final bool consumeResult = await iap.consume("PURCHASE TOKEN"); //IN PurchaseInf
 **note**: if you need `PurchaseToken` after `purchase` you can getting it from `purchaseInfo.purchaseToken`
 
 **توجه**: در صورتی که تمایل دارید بعد از خرید، خرید را مصرف کنید و نیاز به `PurchaseToken` دارید، می توانید آن را از کلاسی که در جواب خرید به شما داده شده بردارید : `purchaseInfo.purchaseToken`
+
+
 
 ### User purchases
 
@@ -116,6 +130,8 @@ final List<PurchaseInfo> purchasedProducts = await iap.getPurchasedProducts();
 print(purchasedProducts);
 ```
 
+
+
 ### User Subscriptions
 
 for getting all subscriptions of user :
@@ -127,6 +143,8 @@ final List<PurchaseInfo> subscribedProducts = await iap.getSubscribedProducts();
 print(subscribedProducts);
 ```
 
+
+
 ### Disconnect
 
 for disconnect connection of app and cafebazaar :
@@ -136,6 +154,8 @@ for disconnect connection of app and cafebazaar :
 ```dart
 await iap.disconnect();
 ```
+
+
 
 ## Intents
 
@@ -153,9 +173,11 @@ print('USER BACK TO YOUR APP');
 
 if `packageName == null` this library open details page of current packageName
 
-اگر `` این کتابخانه صفحه توضیحات اپلیکیشن شمارو به طور اتوماتیک باز می کند.
+اگر `packageName == null` این کتابخانه صفحه توضیحات اپلیکیشن شمارو به طور اتوماتیک باز می کند.
 
 **note**: this method is Future, and you can found when user back to app
+
+
 
 ### Open Developer applications List
 
@@ -170,6 +192,8 @@ print('USER BACK TO YOUR APP');
 ```
 
 **note**: this method is Future, and you can found when user back to app
+
+
 
 ### Open comment form
 
@@ -189,6 +213,8 @@ if `packageName == null` this library open comment form of current packageName
 
 **note**: this method is Future, and you can found when user back to app
 
+
+
 ## Update Checker
 
 for getting current version of your app in cafebazaar market :
@@ -199,6 +225,8 @@ for getting current version of your app in cafebazaar market :
 final _bazaar = FlutterBazaar.instance;
 final int versionCode = await _bazaar.getLatestVersion();
 ```
+
+
 
 ## Login Checker
 
