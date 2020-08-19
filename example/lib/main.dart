@@ -17,7 +17,7 @@ class _MyAppState extends State<MyApp> {
 
   IAP _iap;
   IAP get iap {
-    if(_iap == null) {
+    if (_iap == null) {
       _iap = _bazaar.inAppPurchase(PUBLIC_KEY);
     }
     return _iap;
@@ -64,71 +64,68 @@ class _MyAppState extends State<MyApp> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Text(
-                    "آخرین نسخه برنامه : $appVersionCode"
-                  ),
+                  Text("آخرین نسخه برنامه : $appVersionCode"),
                   const SizedBox(
                     height: 12,
                   ),
-                  if(!isLoggedIn) FlatButton(
-                    color: Colors.green,
-                    textColor: Colors.white,
-                    height: 50,
-                    onPressed: _login,
-                    child: Text(
-                      "ورود به بازار"
+                  if (!isLoggedIn)
+                    FlatButton(
+                      color: Colors.green,
+                      textColor: Colors.white,
+                      height: 50,
+                      onPressed: _login,
+                      child: Text("ورود به بازار"),
                     ),
-                  ),
-                  if(!isLoggedIn) const SizedBox(
-                    height: 12,
-                  ),
-                  if(isLoggedIn) FlatButton(
-                    color: Colors.blue,
-                    textColor: Colors.white,
-                    height: 50,
-                    onPressed: () => _purchase(
-                      consume: true,
+                  if (!isLoggedIn)
+                    const SizedBox(
+                      height: 12,
                     ),
-                    child: Text(
-                      "خرید محصول"
+                  if (isLoggedIn)
+                    FlatButton(
+                      color: Colors.blue,
+                      textColor: Colors.white,
+                      height: 50,
+                      onPressed: () => _purchase(
+                        consume: true,
+                      ),
+                      child: Text("خرید محصول"),
                     ),
-                  ),
-                  if(isLoggedIn) const SizedBox(
-                    height: 12,
-                  ),
-                  if(isLoggedIn) FlatButton(
-                    color: Colors.blue,
-                    textColor: Colors.white,
-                    height: 50,
-                    onPressed: _subscribe,
-                    child: Text(
-                      "اشتراک محصول"
+                  if (isLoggedIn)
+                    const SizedBox(
+                      height: 12,
                     ),
-                  ),
-                  if(isLoggedIn) const SizedBox(
-                    height: 12,
-                  ),
-                  if(isLoggedIn) FlatButton(
-                    color: Colors.brown,
-                    textColor: Colors.white,
-                    height: 50,
-                    onPressed: _getPurchasedProducts,
-                    child: Text(
-                      "لیست محصولات خریداری شده"
+                  if (isLoggedIn)
+                    FlatButton(
+                      color: Colors.blue,
+                      textColor: Colors.white,
+                      height: 50,
+                      onPressed: _subscribe,
+                      child: Text("اشتراک محصول"),
                     ),
-                  ),
-                  if(isLoggedIn) const SizedBox(
-                    height: 12,
-                  ),
-                  if(isLoggedIn) FlatButton(
-                    color: Colors.brown,
-                    textColor: Colors.white,
-                    height: 50,
-                    onPressed: _getSubscribedProducts,
-                    child: Text(
-                      "لیست اشتراک های خریداری شده"
+                  if (isLoggedIn)
+                    const SizedBox(
+                      height: 12,
                     ),
-                  ),
+                  if (isLoggedIn)
+                    FlatButton(
+                      color: Colors.brown,
+                      textColor: Colors.white,
+                      height: 50,
+                      onPressed: _getPurchasedProducts,
+                      child: Text("لیست محصولات خریداری شده"),
+                    ),
+                  if (isLoggedIn)
+                    const SizedBox(
+                      height: 12,
+                    ),
+                  if (isLoggedIn)
+                    FlatButton(
+                      color: Colors.brown,
+                      textColor: Colors.white,
+                      height: 50,
+                      onPressed: _getSubscribedProducts,
+                      child: Text("لیست اشتراک های خریداری شده"),
+                    ),
                   const SizedBox(
                     height: 12,
                   ),
@@ -137,9 +134,7 @@ class _MyAppState extends State<MyApp> {
                     textColor: Colors.white,
                     height: 50,
                     onPressed: _bazaar.openDetail,
-                    child: Text(
-                      "مشاهده صفحه برنامه در بازار"
-                    ),
+                    child: Text("مشاهده صفحه برنامه در بازار"),
                   ),
                   const SizedBox(
                     height: 12,
@@ -149,9 +144,7 @@ class _MyAppState extends State<MyApp> {
                     textColor: Colors.white,
                     height: 50,
                     onPressed: _bazaar.openCommentForm,
-                    child: Text(
-                      "ثبت نظر در بازار"
-                    ),
+                    child: Text("ثبت نظر در بازار"),
                   ),
                   const SizedBox(
                     height: 12,
@@ -161,9 +154,7 @@ class _MyAppState extends State<MyApp> {
                     textColor: Colors.white,
                     height: 50,
                     onPressed: () => _bazaar.openDeveloperPage("google-llc"),
-                    child: Text(
-                      "مشاهده اپلیکیشن های توسعه دهنده"
-                    ),
+                    child: Text("مشاهده اپلیکیشن های توسعه دهنده"),
                   ),
                 ],
               ),
@@ -182,9 +173,9 @@ class _MyAppState extends State<MyApp> {
 
   Future _purchase({bool consume = false}) async {
     final purchaseResult = await iap.purchase("productId");
-    if(purchaseResult != null) {
+    if (purchaseResult != null) {
       print('purchaseResult: $purchaseResult');
-      if(consume) {
+      if (consume) {
         iap.consume(purchaseResult.purchaseToken);
       }
     }
@@ -192,7 +183,7 @@ class _MyAppState extends State<MyApp> {
 
   Future _subscribe() async {
     final subscribeResult = await iap.subscribe("productId");
-    if(subscribeResult != null) {
+    if (subscribeResult != null) {
       print('subscribeResult: $subscribeResult');
     }
   }

@@ -1,4 +1,3 @@
-
 class PurchaseInfo {
   final String orderId;
   final String purchaseToken;
@@ -9,28 +8,26 @@ class PurchaseInfo {
   final String productId;
   final String dataSignature;
 
-  PurchaseInfo({
-    this.orderId,
-    this.purchaseToken,
-    this.payload,
-    this.packageName,
-    this.purchaseState,
-    this.purchaseTime,
-    this.productId,
-    this.dataSignature
-  });
+  PurchaseInfo(
+      {this.orderId,
+      this.purchaseToken,
+      this.payload,
+      this.packageName,
+      this.purchaseState,
+      this.purchaseTime,
+      this.productId,
+      this.dataSignature});
 
-  factory PurchaseInfo.fromMap(Map<String, dynamic> map) =>
-    PurchaseInfo(
-      orderId: map['orderId'],
-      purchaseToken: map['purchaseToken'],
-      payload: map['payload'],
-      packageName: map['packageName'],
-      purchaseState: map['purchaseState'],
-      purchaseTime: map['purchaseTime'] as int,
-      productId: map['productId'],
-      dataSignature: map['dataSignature'],
-    );
+  factory PurchaseInfo.fromMap(Map<String, dynamic> map) => PurchaseInfo(
+        orderId: map['orderId'],
+        purchaseToken: map['purchaseToken'],
+        payload: map['payload'],
+        packageName: map['packageName'],
+        purchaseState: map['purchaseState'],
+        purchaseTime: map['purchaseTime'] as int,
+        productId: map['productId'],
+        dataSignature: map['dataSignature'],
+      );
 
   Map<String, dynamic> toMap() {
     return {
