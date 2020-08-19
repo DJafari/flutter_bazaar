@@ -175,4 +175,5 @@ final _bazaar = FlutterBazaar.instance;
 final bool isLoggedIn = await _bazaar.isLoggedIn();
 ```
 
+---
 برای توضیحات بیشتر <a href="https://github.com/DJafari/flutter_bazaar/example">Example</a> را مشاهده کنید. 

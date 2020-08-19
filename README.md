@@ -1,4 +1,4 @@
-<a href="https://github.com/DJafari/flutter_bazaar/README_FA.md">SHOW PERSIAN README</a>
+<a href="https://github.com/DJafari/flutter_bazaar/blob/master/README_FA.md">SHOW PERSIAN README</a>
 
 # flutter_bazaar
 CafeBazaar API (In-App Purchase, Intents, UpdateChecker, LoginChecker) in flutter, works only in Android platform
@@ -185,4 +185,5 @@ final _bazaar = FlutterBazaar.instance;
 final bool isLoggedIn = await _bazaar.isLoggedIn();
 ```
 
+---
 for more info check <a href="https://github.com/DJafari/flutter_bazaar/example">Example</a>
