@@ -1,0 +1,24 @@
+name: flutter_bazaar
+description: CafeBazaar APIs (In-App Purchase, Intents, UpdateChecker, LoginChecker) in flutter, works only in Android platform
+version: 0.0.1
+author: https://davoood.ir <me@davoood.ir>
+homepage: https://github.com/DJafari/flutter_bazaar
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+  flutter: ">=1.20.0 <2.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: ir.davoood.flutter_bazaar
+        pluginClass: FlutterBazaarPlugin
