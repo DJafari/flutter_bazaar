@@ -186,4 +186,4 @@ final bool isLoggedIn = await _bazaar.isLoggedIn();
 ```
 
 ---
-for more info check <a href="https://github.com/DJafari/flutter_bazaar/example">Example</a>
+for more info check <a href="https://github.com/DJafari/flutter_bazaar/tree/master/example">Example</a>
